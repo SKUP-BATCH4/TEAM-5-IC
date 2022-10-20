@@ -141,8 +141,68 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _TXB0D5 `Vuc ~T0 @X0 0 e@3915 ]
 "5746
 [v _TXB0CON `Vuc ~T0 @X0 0 e@3904 ]
+"4683
+[v _TXB1SIDH `Vuc ~T0 @X0 0 e@3889 ]
+"4795
+[v _TXB1SIDL `Vuc ~T0 @X0 0 e@3890 ]
+"5111
+[v _TXB1DLC `Vuc ~T0 @X0 0 e@3893 ]
+"5508
+[v _TXB1D5 `Vuc ~T0 @X0 0 e@3899 ]
+"4593
+[v _TXB1CON `Vuc ~T0 @X0 0 e@3888 ]
+"11944
+[v _TRISC `Vuc ~T0 @X0 0 e@3988 ]
+"11955
+[s S373 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S373 . TRISC0 TRISC1 TRISC2 TRISC3 TRISC4 TRISC5 TRISC6 TRISC7 ]
+"11965
+[s S374 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S374 . RC0 RC1 RC2 RC3 RC4 RC5 RC6 RC7 ]
+"11954
+[u S372 `S373 1 `S374 1 ]
+[n S372 . . . ]
+"11976
+[v _TRISCbits `VS372 ~T0 @X0 0 e@3988 ]
+"11248
+[v _LATC `Vuc ~T0 @X0 0 e@3979 ]
+"10533
+[s S324 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S324 . RC0 RC1 RC2 RC3 RC4 RC5 RC6 RC7 ]
+"10543
+[s S325 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S325 . T1OSO T1OSI . SCK SDI SDO TX RX ]
+"10553
+[s S326 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S326 . T1CKI . CCP1 SCL SDA . CK DT ]
+"10563
+[s S327 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S327 . . CCP2 PA1 ]
+"10568
+[s S328 :1 `uc 1 :1 `uc 1 ]
+[n S328 . . PA2 ]
+"10532
+[u S323 `S324 1 `S325 1 `S326 1 `S327 1 `S328 1 ]
+[n S323 . . . . . . ]
+"10573
+[v _PORTCbits `VS323 ~T0 @X0 0 e@3970 ]
+"11254
+[s S352 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S352 . LATC0 LATC1 LATC2 LATC3 LATC4 LATC5 LATC6 LATC7 ]
+"11264
+[s S353 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S353 . LC0 LC1 LC2 LC3 LC4 LC5 LC6 LC7 ]
+"11253
+[u S351 `S352 1 `S353 1 ]
+[n S351 . . . ]
+"11275
+[v _LATCbits `VS351 ~T0 @X0 0 e@3979 ]
+[v F38 `(v ~T0 @X0 1 tf1`ul ]
+"12 C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\builtins.h
+[v __delay `JF38 ~T0 @X0 0 e ]
+[p i __delay ]
 [p mainexit ]
-"11535
+"11535 C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f458.h
 [s S361 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
 [n S361 . TRISA0 TRISA1 TRISA2 TRISA3 TRISA4 TRISA5 TRISA6 ]
 "11544
@@ -169,10 +229,6 @@ Version 3.2 HI-TECH Software Intermediate Code
 [n S319 . . . . ]
 "10442
 [v _PORTBbits `VS319 ~T0 @X0 0 e@3969 ]
-[v F38 `(v ~T0 @X0 1 tf1`ul ]
-"12 C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\builtins.h
-[v __delay `JF38 ~T0 @X0 0 e ]
-[p i __delay ]
 "9 team5_IC.c
 [p x OSC=HS ]
 "10
@@ -6547,232 +6603,345 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;team5_IC.c: 76: CANCON=0x00;
 "76
 [e = _CANCON -> -> 0 `i `uc ]
-[; ;team5_IC.c: 83: }
-"83
+[; ;team5_IC.c: 79: }
+"79
 [e :UE 574 ]
 }
 [v $root$_ISR1 `(v ~T0 @X0 0 e ]
-"88
+"84
 [v _ISR1 `(v ~T45 @X0 1 ef ]
-"89
+"85
 {
-[; ;team5_IC.c: 88: void __interrupt() ISR1()
-[; ;team5_IC.c: 89: {
+[; ;team5_IC.c: 84: void __interrupt() ISR1()
+[; ;team5_IC.c: 85: {
 [e :U _ISR1 ]
 [f ]
-[; ;team5_IC.c: 92: if( PIR3bits.RXB0IF)
-"92
+[; ;team5_IC.c: 87: if(PIR3bits.RXB0IF)
+"87
 [e $ ! != -> . . _PIR3bits 0 0 `i -> -> -> 0 `i `Vuc `i 576  ]
+[; ;team5_IC.c: 88: {
+"88
+{
+[; ;team5_IC.c: 91: can_read();
+"91
+[e ( _can_read ..  ]
+[; ;team5_IC.c: 92: if(can_read_msg[3]==0X03 && can_read_msg[9]==0X00 && can_read_msg[10]==0X11)
+"92
+[e $ ! && && == -> *U + &U _can_read_msg * -> -> -> 3 `i `ui `ux -> -> # *U &U _can_read_msg `ui `ux `i -> 3 `i == -> *U + &U _can_read_msg * -> -> -> 9 `i `ui `ux -> -> # *U &U _can_read_msg `ui `ux `i -> 0 `i == -> *U + &U _can_read_msg * -> -> -> 10 `i `ui `ux -> -> # *U &U _can_read_msg `ui `ux `i -> 17 `i 577  ]
 [; ;team5_IC.c: 93: {
 "93
 {
-[; ;team5_IC.c: 96: can_read();
+[; ;team5_IC.c: 94: LATAbits.LA0 = ~LATAbits.LA0;
+"94
+[e = . . _LATAbits 1 0 -> ~ -> . . _LATAbits 1 0 `i `uc ]
 "96
-[e ( _can_read ..  ]
-[; ;team5_IC.c: 97: if(can_read_msg[3]==0X04 && can_read_msg[9]==0X00 && can_read_msg[10]==0X11)
+}
+[; ;team5_IC.c: 96: }
+[e $U 578  ]
 "97
-[e $ ! && && == -> *U + &U _can_read_msg * -> -> -> 3 `i `ui `ux -> -> # *U &U _can_read_msg `ui `ux `i -> 4 `i == -> *U + &U _can_read_msg * -> -> -> 9 `i `ui `ux -> -> # *U &U _can_read_msg `ui `ux `i -> 0 `i == -> *U + &U _can_read_msg * -> -> -> 10 `i `ui `ux -> -> # *U &U _can_read_msg `ui `ux `i -> 17 `i 577  ]
+[e :U 577 ]
+[; ;team5_IC.c: 97: else if(can_read_msg[1]==0X03 && can_read_msg[9]==0X00 && can_read_msg[10]==0X11)
+[e $ ! && && == -> *U + &U _can_read_msg * -> -> -> 1 `i `ui `ux -> -> # *U &U _can_read_msg `ui `ux `i -> 3 `i == -> *U + &U _can_read_msg * -> -> -> 9 `i `ui `ux -> -> # *U &U _can_read_msg `ui `ux `i -> 0 `i == -> *U + &U _can_read_msg * -> -> -> 10 `i `ui `ux -> -> # *U &U _can_read_msg `ui `ux `i -> 17 `i 579  ]
 [; ;team5_IC.c: 98: {
 "98
 {
-[; ;team5_IC.c: 99: LATAbits.LA0 = ~LATAbits.LA0;
+[; ;team5_IC.c: 99: LATAbits.LA1 = ~LATAbits.LA1;
 "99
-[e = . . _LATAbits 1 0 -> ~ -> . . _LATAbits 1 0 `i `uc ]
+[e = . . _LATAbits 1 1 -> ~ -> . . _LATAbits 1 1 `i `uc ]
 "101
 }
-[; ;team5_IC.c: 101: }
-[e $U 578  ]
-"102
-[e :U 577 ]
-[; ;team5_IC.c: 102: else if(can_read_msg[1]==0X03 && can_read_msg[9]==0X00 && can_read_msg[10]==0X11)
-[e $ ! && && == -> *U + &U _can_read_msg * -> -> -> 1 `i `ui `ux -> -> # *U &U _can_read_msg `ui `ux `i -> 3 `i == -> *U + &U _can_read_msg * -> -> -> 9 `i `ui `ux -> -> # *U &U _can_read_msg `ui `ux `i -> 0 `i == -> *U + &U _can_read_msg * -> -> -> 10 `i `ui `ux -> -> # *U &U _can_read_msg `ui `ux `i -> 17 `i 579  ]
-[; ;team5_IC.c: 103: {
-"103
-{
-[; ;team5_IC.c: 104: LATAbits.LA1 = ~LATAbits.LA1;
-"104
-[e = . . _LATAbits 1 1 -> ~ -> . . _LATAbits 1 1 `i `uc ]
-"106
-}
 [e :U 579 ]
-"108
+"103
 [e :U 578 ]
-[; ;team5_IC.c: 106: }
-[; ;team5_IC.c: 108: PIR3bits.RXB0IF=0;
+[; ;team5_IC.c: 101: }
+[; ;team5_IC.c: 103: PIR3bits.RXB0IF=0;
 [e = . . _PIR3bits 0 0 -> -> 0 `i `uc ]
-"109
+"104
 }
 [e :U 576 ]
-[; ;team5_IC.c: 109: }
-[; ;team5_IC.c: 111: }
-"111
+[; ;team5_IC.c: 104: }
+[; ;team5_IC.c: 106: }
+"106
 [e :UE 575 ]
 }
-"112
+"107
 [v _sys_init `(v ~T0 @X0 1 ef ]
-"113
+"108
 {
-[; ;team5_IC.c: 112: void sys_init()
-[; ;team5_IC.c: 113: {
+[; ;team5_IC.c: 107: void sys_init()
+[; ;team5_IC.c: 108: {
 [e :U _sys_init ]
 [f ]
-[; ;team5_IC.c: 114: INTCONbits.GIE=1;
-"114
+[; ;team5_IC.c: 109: INTCONbits.GIE=1;
+"109
 [e = . . _INTCONbits 1 7 -> -> 1 `i `uc ]
-[; ;team5_IC.c: 115: INTCONbits.PEIE=1;
-"115
+[; ;team5_IC.c: 110: INTCONbits.PEIE=1;
+"110
 [e = . . _INTCONbits 1 6 -> -> 1 `i `uc ]
-[; ;team5_IC.c: 116: }
-"116
+[; ;team5_IC.c: 111: }
+"111
 [e :UE 580 ]
 }
-"118
+"113
 [v _can_init `(v ~T0 @X0 1 ef ]
-"119
+"114
 {
-[; ;team5_IC.c: 118: void can_init()
-[; ;team5_IC.c: 119: {
+[; ;team5_IC.c: 113: void can_init()
+[; ;team5_IC.c: 114: {
 [e :U _can_init ]
 [f ]
-[; ;team5_IC.c: 120: TRISBbits.TRISB2=0 ;
-"120
+[; ;team5_IC.c: 115: TRISBbits.TRISB2=0 ;
+"115
 [e = . . _TRISBbits 0 2 -> -> 0 `i `uc ]
-[; ;team5_IC.c: 121: TRISBbits.TRISB3=1;
-"121
+[; ;team5_IC.c: 116: TRISBbits.TRISB3=1;
+"116
 [e = . . _TRISBbits 0 3 -> -> 1 `i `uc ]
-[; ;team5_IC.c: 122: PIE3bits.RXB0IE =1;
-"122
+[; ;team5_IC.c: 117: PIE3bits.RXB0IE =1;
+"117
 [e = . . _PIE3bits 0 0 -> -> 1 `i `uc ]
-[; ;team5_IC.c: 124: IPR3bits.RXB0IP =1;
-"124
+[; ;team5_IC.c: 119: IPR3bits.RXB0IP =1;
+"119
 [e = . . _IPR3bits 0 0 -> -> 1 `i `uc ]
-[; ;team5_IC.c: 126: CANCON|=0x80;
-"126
+[; ;team5_IC.c: 121: CANCON|=0x80;
+"121
 [e =| _CANCON -> -> 128 `i `uc ]
-[; ;team5_IC.c: 127: while(CANSTAT!=0x80) ;
-"127
+[; ;team5_IC.c: 122: while(CANSTAT!=0x80) ;
+"122
 [e $U 582  ]
 [e :U 583 ]
 [e :U 582 ]
 [e $ != -> _CANSTAT `i -> 128 `i 583  ]
 [e :U 584 ]
-[; ;team5_IC.c: 128: BRGCON1=0xC1;
-"128
+[; ;team5_IC.c: 123: BRGCON1=0xC1;
+"123
 [e = _BRGCON1 -> -> 193 `i `uc ]
-[; ;team5_IC.c: 129: BRGCON2=0xAE;
-"129
+[; ;team5_IC.c: 124: BRGCON2=0xAE;
+"124
 [e = _BRGCON2 -> -> 174 `i `uc ]
-[; ;team5_IC.c: 130: BRGCON3=0x45;
-"130
+[; ;team5_IC.c: 125: BRGCON3=0x45;
+"125
 [e = _BRGCON3 -> -> 69 `i `uc ]
-[; ;team5_IC.c: 131: CIOCON=0x20;
-"131
+[; ;team5_IC.c: 126: CIOCON=0x20;
+"126
 [e = _CIOCON -> -> 32 `i `uc ]
-[; ;team5_IC.c: 132: RXB0CONbits.RXM0=1;
-"132
+[; ;team5_IC.c: 127: RXB0CONbits.RXM0=1;
+"127
 [e = . . _RXB0CONbits 0 5 -> -> 1 `i `uc ]
-[; ;team5_IC.c: 133: RXB0CONbits.RXM1=1;
-"133
+[; ;team5_IC.c: 128: RXB0CONbits.RXM1=1;
+"128
 [e = . . _RXB0CONbits 0 6 -> -> 1 `i `uc ]
-[; ;team5_IC.c: 134: CANCON=0x00;
-"134
+[; ;team5_IC.c: 129: CANCON=0x00;
+"129
 [e = _CANCON -> -> 0 `i `uc ]
-[; ;team5_IC.c: 136: }
-"136
+[; ;team5_IC.c: 131: }
+"131
 [e :UE 581 ]
 }
-"138
+"133
 [v _tx_buffer0 `(v ~T0 @X0 1 ef ]
-"139
+"134
 {
-[; ;team5_IC.c: 138: void tx_buffer0(void)
-[; ;team5_IC.c: 139: {
+[; ;team5_IC.c: 133: void tx_buffer0(void)
+[; ;team5_IC.c: 134: {
 [e :U _tx_buffer0 ]
 [f ]
-[; ;team5_IC.c: 141: TXB0SIDH = 0x11;
-"141
+[; ;team5_IC.c: 136: TXB0SIDH = 0x11;
+"136
 [e = _TXB0SIDH -> -> 17 `i `uc ]
-[; ;team5_IC.c: 142: TXB0SIDL = 0x00;
-"142
+[; ;team5_IC.c: 137: TXB0SIDL = 0x00;
+"137
 [e = _TXB0SIDL -> -> 0 `i `uc ]
-[; ;team5_IC.c: 143: TXB0DLC =0x08;
-"143
+[; ;team5_IC.c: 138: TXB0DLC =0x08;
+"138
 [e = _TXB0DLC -> -> 8 `i `uc ]
-[; ;team5_IC.c: 145: TXB0D1 = 0x22;
-"145
-[e = _TXB0D1 -> -> 34 `i `uc ]
-[; ;team5_IC.c: 147: TXB0D3 = 0x22;
-"147
-[e = _TXB0D3 -> -> 34 `i `uc ]
-[; ;team5_IC.c: 149: TXB0D5 = 0x22;
-"149
-[e = _TXB0D5 -> -> 34 `i `uc ]
-[; ;team5_IC.c: 153: TXB0CON = 0x08;
-"153
+[; ;team5_IC.c: 140: TXB0D1 = 0x03;
+"140
+[e = _TXB0D1 -> -> 3 `i `uc ]
+[; ;team5_IC.c: 142: TXB0D3 = 0x03;
+"142
+[e = _TXB0D3 -> -> 3 `i `uc ]
+[; ;team5_IC.c: 144: TXB0D5 = 0x04;
+"144
+[e = _TXB0D5 -> -> 4 `i `uc ]
+[; ;team5_IC.c: 148: TXB0CON = 0x08;
+"148
 [e = _TXB0CON -> -> 8 `i `uc ]
-[; ;team5_IC.c: 154: }
-"154
+[; ;team5_IC.c: 149: }
+"149
 [e :UE 585 ]
 }
-[v $root$_main `(v ~T0 @X0 0 e ]
-"155
-[v _main `(v ~T0 @X0 1 ef ]
-"156
+"151
+[v _tx_buffer1 `(v ~T0 @X0 1 ef ]
+"152
 {
-[; ;team5_IC.c: 155: void main()
-[; ;team5_IC.c: 156: {
+[; ;team5_IC.c: 151: void tx_buffer1(void)
+[; ;team5_IC.c: 152: {
+[e :U _tx_buffer1 ]
+[f ]
+[; ;team5_IC.c: 154: TXB1SIDH = 0x11;
+"154
+[e = _TXB1SIDH -> -> 17 `i `uc ]
+[; ;team5_IC.c: 155: TXB1SIDL = 0x00;
+"155
+[e = _TXB1SIDL -> -> 0 `i `uc ]
+[; ;team5_IC.c: 156: TXB1DLC =0x08;
+"156
+[e = _TXB1DLC -> -> 8 `i `uc ]
+[; ;team5_IC.c: 162: TXB1D5 = 0x04;
+"162
+[e = _TXB1D5 -> -> 4 `i `uc ]
+[; ;team5_IC.c: 166: TXB1CON = 0x08;
+"166
+[e = _TXB1CON -> -> 8 `i `uc ]
+[; ;team5_IC.c: 167: }
+"167
+[e :UE 586 ]
+}
+"168
+[v _trip `(v ~T0 @X0 1 ef ]
+"169
+{
+[; ;team5_IC.c: 168: void trip()
+[; ;team5_IC.c: 169: {
+[e :U _trip ]
+[f ]
+[; ;team5_IC.c: 170: TRISC=0;
+"170
+[e = _TRISC -> -> 0 `i `uc ]
+[; ;team5_IC.c: 171: TRISCbits.RC7=0;
+"171
+[e = . . _TRISCbits 1 7 -> -> 0 `i `uc ]
+[; ;team5_IC.c: 172: LATC=0;
+"172
+[e = _LATC -> -> 0 `i `uc ]
+[; ;team5_IC.c: 174: if(PORTCbits.RC7==0)
+"174
+[e $ ! == -> . . _PORTCbits 0 7 `i -> 0 `i 588  ]
+[; ;team5_IC.c: 175: {
+"175
+{
+[; ;team5_IC.c: 176: LATCbits.LC7=1;
+"176
+[e = . . _LATCbits 1 7 -> -> 1 `i `uc ]
+[; ;team5_IC.c: 177: if(can_read_msg[3]==0X03 && can_read_msg[9]==0X00 && can_read_msg[10]==0X11)
+"177
+[e $ ! && && == -> *U + &U _can_read_msg * -> -> -> 3 `i `ui `ux -> -> # *U &U _can_read_msg `ui `ux `i -> 3 `i == -> *U + &U _can_read_msg * -> -> -> 9 `i `ui `ux -> -> # *U &U _can_read_msg `ui `ux `i -> 0 `i == -> *U + &U _can_read_msg * -> -> -> 10 `i `ui `ux -> -> # *U &U _can_read_msg `ui `ux `i -> 17 `i 589  ]
+[; ;team5_IC.c: 178: {
+"178
+{
+[; ;team5_IC.c: 179: tx_buffer1();
+"179
+[e ( _tx_buffer1 ..  ]
+[; ;team5_IC.c: 180: _delay((unsigned long)((1000)*(20000000/4000.0)));
+"180
+[e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 20000000 `l `d .4000.0 `ul ]
+"181
+}
+[e :U 589 ]
+"182
+}
+[; ;team5_IC.c: 181: }
+[; ;team5_IC.c: 182: }
+[e $U 590  ]
+"183
+[e :U 588 ]
+[; ;team5_IC.c: 183: else if(PORTCbits.RC7==1)
+[e $ ! == -> . . _PORTCbits 0 7 `i -> 1 `i 591  ]
+[; ;team5_IC.c: 184: {
+"184
+{
+[; ;team5_IC.c: 185: LATCbits.LC7=0;
+"185
+[e = . . _LATCbits 1 7 -> -> 0 `i `uc ]
+[; ;team5_IC.c: 186: if(can_read_msg[3]==0X03 && can_read_msg[9]==0X00 && can_read_msg[10]==0X11)
+"186
+[e $ ! && && == -> *U + &U _can_read_msg * -> -> -> 3 `i `ui `ux -> -> # *U &U _can_read_msg `ui `ux `i -> 3 `i == -> *U + &U _can_read_msg * -> -> -> 9 `i `ui `ux -> -> # *U &U _can_read_msg `ui `ux `i -> 0 `i == -> *U + &U _can_read_msg * -> -> -> 10 `i `ui `ux -> -> # *U &U _can_read_msg `ui `ux `i -> 17 `i 592  ]
+[; ;team5_IC.c: 187: {
+"187
+{
+[; ;team5_IC.c: 188: tx_buffer1();
+"188
+[e ( _tx_buffer1 ..  ]
+[; ;team5_IC.c: 189: _delay((unsigned long)((1000)*(20000000/4000.0)));
+"189
+[e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 20000000 `l `d .4000.0 `ul ]
+"190
+}
+[e :U 592 ]
+"191
+}
+[e :U 591 ]
+"192
+[e :U 590 ]
+[; ;team5_IC.c: 190: }
+[; ;team5_IC.c: 191: }
+[; ;team5_IC.c: 192: }
+[e :UE 587 ]
+}
+[v $root$_main `(v ~T0 @X0 0 e ]
+"195
+[v _main `(v ~T0 @X0 1 ef ]
+"196
+{
+[; ;team5_IC.c: 195: void main()
+[; ;team5_IC.c: 196: {
 [e :U _main ]
 [f ]
-[; ;team5_IC.c: 157: TRISAbits.RA0=0;
-"157
+[; ;team5_IC.c: 199: TRISAbits.RA0=0;
+"199
 [e = . . _TRISAbits 1 0 -> -> 0 `i `uc ]
-[; ;team5_IC.c: 158: LATAbits.LA0=0;
-"158
+[; ;team5_IC.c: 200: LATAbits.LA0=0;
+"200
 [e = . . _LATAbits 1 0 -> -> 0 `i `uc ]
-[; ;team5_IC.c: 159: TRISAbits.RA1=0;
-"159
+[; ;team5_IC.c: 201: TRISAbits.RA1=0;
+"201
 [e = . . _TRISAbits 1 1 -> -> 0 `i `uc ]
-[; ;team5_IC.c: 160: LATAbits.LA1=0;
-"160
+[; ;team5_IC.c: 202: LATAbits.LA1=0;
+"202
 [e = . . _LATAbits 1 1 -> -> 0 `i `uc ]
-[; ;team5_IC.c: 161: sys_init();
-"161
+[; ;team5_IC.c: 203: sys_init();
+"203
 [e ( _sys_init ..  ]
-[; ;team5_IC.c: 162: can_init();
-"162
+[; ;team5_IC.c: 204: can_init();
+"204
 [e ( _can_init ..  ]
-[; ;team5_IC.c: 163: RBPU=0;
-"163
+[; ;team5_IC.c: 205: trip();
+"205
+[e ( _trip ..  ]
+[; ;team5_IC.c: 206: RBPU=0;
+"206
 [e = _RBPU -> -> 0 `i `b ]
-[; ;team5_IC.c: 164: TRISBbits.RB0=1;
-"164
+[; ;team5_IC.c: 207: TRISBbits.RB0=1;
+"207
 [e = . . _TRISBbits 1 0 -> -> 1 `i `uc ]
-[; ;team5_IC.c: 165: while(1){
-"165
-[e :U 588 ]
+[; ;team5_IC.c: 208: while(1){
+"208
+[e :U 595 ]
 {
-[; ;team5_IC.c: 166: if(PORTBbits.RB0==0){
-"166
-[e $ ! == -> . . _PORTBbits 0 0 `i -> 0 `i 590  ]
+[; ;team5_IC.c: 209: if(PORTBbits.RB0==0)
+"209
+[e $ ! == -> . . _PORTBbits 0 0 `i -> 0 `i 597  ]
+[; ;team5_IC.c: 210: {
+"210
 {
-[; ;team5_IC.c: 167: tx_buffer0();
-"167
+[; ;team5_IC.c: 211: tx_buffer0();
+"211
 [e ( _tx_buffer0 ..  ]
-[; ;team5_IC.c: 168: _delay((unsigned long)((1000)*(20000000/4000.0)));
-"168
+[; ;team5_IC.c: 212: _delay((unsigned long)((1000)*(20000000/4000.0)));
+"212
 [e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 20000000 `l `d .4000.0 `ul ]
-"169
+"213
 }
-[e :U 590 ]
-"171
+[e :U 597 ]
+"214
 }
-[e :U 587 ]
-"165
-[e $U 588  ]
-[e :U 589 ]
-[; ;team5_IC.c: 169: }
-[; ;team5_IC.c: 171: }
-[; ;team5_IC.c: 172: }
-"172
-[e :UE 586 ]
+[e :U 594 ]
+"208
+[e $U 595  ]
+[e :U 596 ]
+[; ;team5_IC.c: 213: }
+[; ;team5_IC.c: 214: }
+[; ;team5_IC.c: 215: }
+"215
+[e :UE 593 ]
 }

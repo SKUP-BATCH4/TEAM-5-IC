@@ -10162,7 +10162,7 @@ can_read_msg[10] = RXB0SIDH;
 RXB0CONbits.RXB0FUL = 0;
 CANCON=0x00;
 
-# 83
+
 }
 
 
@@ -10171,13 +10171,12 @@ CANCON=0x00;
 void __interrupt() ISR1()
 {
 
-
-if( PIR3bits.RXB0IF)
+if(PIR3bits.RXB0IF)
 {
 
 
 can_read();
-if(can_read_msg[3]==0X04 && can_read_msg[9]==0X00 && can_read_msg[10]==0X11)
+if(can_read_msg[3]==0X03 && can_read_msg[9]==0X00 && can_read_msg[10]==0X11)
 {
 LATAbits.LA0 = ~LATAbits.LA0;
 
@@ -10225,32 +10224,77 @@ TXB0SIDH = 0x11;
 TXB0SIDL = 0x00;
 TXB0DLC =0x08;
 
-TXB0D1 = 0x22;
+TXB0D1 = 0x03;
 
-TXB0D3 = 0x22;
+TXB0D3 = 0x03;
 
-TXB0D5 = 0x22;
+TXB0D5 = 0x04;
 
 
 
 TXB0CON = 0x08;
 }
+
+void tx_buffer1(void)
+{
+
+TXB1SIDH = 0x11;
+TXB1SIDL = 0x00;
+TXB1DLC =0x08;
+
+# 162
+TXB1D5 = 0x04;
+
+
+
+TXB1CON = 0x08;
+}
+void trip()
+{
+TRISC=0;
+TRISCbits.RC7=0;
+LATC=0;
+
+if(PORTCbits.RC7==0)
+{
+LATCbits.LC7=1;
+if(can_read_msg[3]==0X03 && can_read_msg[9]==0X00 && can_read_msg[10]==0X11)
+{
+tx_buffer1();
+_delay((unsigned long)((1000)*(20000000/4000.0)));
+}
+}
+else if(PORTCbits.RC7==1)
+{
+LATCbits.LC7=0;
+if(can_read_msg[3]==0X03 && can_read_msg[9]==0X00 && can_read_msg[10]==0X11)
+{
+tx_buffer1();
+_delay((unsigned long)((1000)*(20000000/4000.0)));
+}
+}
+}
+
+
 void main()
 {
+
+
 TRISAbits.RA0=0;
 LATAbits.LA0=0;
 TRISAbits.RA1=0;
 LATAbits.LA1=0;
 sys_init();
 can_init();
+trip();
 RBPU=0;
 TRISBbits.RB0=1;
 while(1){
-if(PORTBbits.RB0==0){
+if(PORTBbits.RB0==0)
+{
 tx_buffer0();
 _delay((unsigned long)((1000)*(20000000/4000.0)));
 }
-
 }
 }
 

@@ -74,11 +74,7 @@ unsigned char can_read_msg[11]; //DECLARING ARRAY FOR READ FUNCTION
     can_read_msg[10] = RXB0SIDH;     //Store the received Standard Identifier  value to array/
     RXB0CONbits.RXB0FUL = 0;       //Receive buffer is open to receive a new message/
     CANCON=0x00;
-//    if(can_read_msg[3]==0X04 && can_read_msg[9]==0X00 && can_read_msg[10]==0X11 ) //COMPARING THE RECIEVED THE MESSAGE WITH GIVEN DATA 
-//           { 
-//             LATA = ~LATA;           
-//            //EEPROM_write(0x21,0x00);
-//            }
+
  //PORTDbits.RD7= ENABLE; // led on 
 }
  
@@ -86,15 +82,14 @@ unsigned char can_read_msg[11]; //DECLARING ARRAY FOR READ FUNCTION
  
  
  void __interrupt() ISR1()
-{   
-      
-      
-    if( PIR3bits.RXB0IF)// CONTION CHECKING CANSTATUS REGISTER WITH RECIVE BUFFER INTERRUPT
+{       
+     
+    if(PIR3bits.RXB0IF)// CONTION CHECKING CANSTATUS REGISTER WITH RECIVE BUFFER INTERRUPT
     {
-       
+      // trip();
       //   PIR3bits.RXB0IF = 0; //clearing interrupt flag 
          can_read();// CAN READ FUNCTION CALL WHICH IS DECLARED IN HEADER FILE 
-     if(can_read_msg[3]==0X04 && can_read_msg[9]==0X00 && can_read_msg[10]==0X11) //COMPARING THE RECIEVED THE MESSAGE WITH GIVEN DATA 
+     if(can_read_msg[3]==0X03 && can_read_msg[9]==0X00 && can_read_msg[10]==0X11) //COMPARING THE RECIEVED THE MESSAGE WITH GIVEN DATA 
            { 
              LATAbits.LA0 = ~LATAbits.LA0;           
             //EEPROM_write(0x21,0x00);
@@ -103,7 +98,7 @@ unsigned char can_read_msg[11]; //DECLARING ARRAY FOR READ FUNCTION
            { 
              LATAbits.LA1 = ~LATAbits.LA1;           
             //EEPROM_write(0x21,0x00);
-            }      
+            } 
       
             PIR3bits.RXB0IF=0;
     }
@@ -142,33 +137,81 @@ TXB0SIDH = 0x11; /* Standard Identifier higher bits D10 to D3 8 bit occupies*/
 TXB0SIDL = 0x00; /* Standard Identifier lower bits D2 TO D0 3 bit occupies*/
 TXB0DLC =0x08; /* Data Length Code 8 bytes of length */
 //TXB0D0 = 0x22; /* DataByte 0 */
-TXB0D1 = 0x22; /* DataByte 1 */
+TXB0D1 = 0x03; /* DataByte 1 */
 //TXB0D2 = 0x22; /* DataByte 2 */
-TXB0D3 = 0x22; /* DataByte 3 */
+TXB0D3 = 0x03; /* DataByte 3 */
 //TXB0D4 = 0x22; /* DataByte 4 */
-TXB0D5 = 0x22; /* DataByte 5 */
+TXB0D5 = 0x04; /* DataByte 5 */
 //TXB0D6 = 0x22; /* DataByte 6 */
 //TXB0D7 = 0x22; /* DataByte 7 */
 //forcing the message to send from buffer to i/o pins/
 TXB0CON = 0x08; /*Requests sending a message. Clears the TXABT, TXLARB and TXERR bits. Priority Level 0 (lowest priority */
 }
+
+void tx_buffer1(void) /*function definition*/
+{
+/*given Standard data frame identifier is 0x701 */
+TXB1SIDH = 0x11; /* Standard Identifier higher bits D10 to D3 8 bit occupies*/
+TXB1SIDL = 0x00; /* Standard Identifier lower bits D2 TO D0 3 bit occupies*/
+TXB1DLC =0x08; /* Data Length Code 8 bytes of length */
+//TXB0D0 = 0x22; /* DataByte 0 */
+//TXB0D1 = 0x03; /* DataByte 1 */
+//TXB0D2 = 0x22; /* DataByte 2 */
+//TXB0D3 = 0x03; /* DataByte 3 */
+//TXB0D4 = 0x22; /* DataByte 4 */
+TXB1D5 = 0x04; /* DataByte 5 */
+//TXB0D6 = 0x22; /* DataByte 6 */
+//TXB0D7 = 0x22; /* DataByte 7 */
+//forcing the message to send from buffer to i/o pins/
+TXB1CON = 0x08; /*Requests sending a message. Clears the TXABT, TXLARB and TXERR bits. Priority Level 0 (lowest priority */
+}
+void trip()
+{
+   TRISC=0;  
+    TRISCbits.RC7=0;//pull up register towards vcc.
+    LATC=0;
+   
+         if(PORTCbits.RC7==0)
+         {
+             LATCbits.LC7=1;// led should be on.
+              if(can_read_msg[3]==0X03 && can_read_msg[9]==0X00 && can_read_msg[10]==0X11) //COMPARING THE RECIEVED THE MESSAGE WITH GIVEN DATA 
+               {
+                tx_buffer1();
+                __delay_ms(1000);
+               }
+         }
+            else if(PORTCbits.RC7==1)
+        {
+            LATCbits.LC7=0;//led should be off.
+            if(can_read_msg[3]==0X03 && can_read_msg[9]==0X00 && can_read_msg[10]==0X11) //COMPARING THE RECIEVED THE MESSAGE WITH GIVEN DATA 
+               {
+                tx_buffer1();
+                __delay_ms(1000);
+               }
+        }
+   }
+    
+
 void main() 
 {
+   
+
     TRISAbits.RA0=0;
     LATAbits.LA0=0; 
     TRISAbits.RA1=0;
     LATAbits.LA1=0;
     sys_init();  
     can_init();  
+    trip();
     RBPU=0;
     TRISBbits.RB0=1;
     while(1){
-        if(PORTBbits.RB0==0){
+        if(PORTBbits.RB0==0)
+        {
             tx_buffer0();
             __delay_ms(1000);
         }
-        
-    }    
+    }  
 }
 
 
